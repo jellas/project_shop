@@ -1,0 +1,15 @@
+글 구성
+1. table 구성
+
+
+table구성
+상품
+1.상품 테이블
+CREATE TABLE shop.products (
+    prdIdx INT AUTO_INCREMENT PRIMARY KEY,
+    prdName VARCHAR(255) NOT NULL,
+    prdPrice int NOT NULL,
+    prdImage_url VARCHAR(255),
+	prdId VARCHAR(100)
+);
+2.

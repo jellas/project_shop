@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Insert title here</title>
+  <style>
+    .vl {
+      border-left: 6px solid green;
+      height: 500px;
+      position: absolute;
+      left: 50%;
+      margin-left: -3px;
+      top: 0;
+    }
+    img {
+      width:10px;
+    }
+    html{
+      width:100%;
+      height:100%;
+    }
+    body{
+      width:100%;
+      height:100%;
+    }
+    main{
+      height:auto;
+      min-height:100%;
+      padding-bottom:177px;
+    }
+    footer{
+      height:177px;
+      position:relative;
+      transform:translateY(-100%);
+    }
+  </style>
+</head>
+<body>
+<footer th:fragment="footer">
+  <div class="container-fluid mt-5 p-5 text-center border-top fixed"
+       style="background: rgb(139, 0, 0);">
+
+
+  </div>
+</footer>
+</body>
+</html>

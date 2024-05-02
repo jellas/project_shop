@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.shop.project.mapper.BoardMapper">
+
+    <!--R-->
+    <select id="selectPrdList" resultType="com.shop.project.dto.ProductsDto">
+		<![CDATA[
+        SELECT
+			prdIdx, prdId, prdName, prdPrice, prdImage_url
+        FROM
+			products
+        ORDER BY prdIdx DESC
+        ]]>
+	</select>
+
+
+</mapper>

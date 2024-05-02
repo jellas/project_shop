@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>상품 목록</title>
+  <style>
+    /* CSS 스타일은 여기에 작성합니다 */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .product-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .product-card {
+      width: calc(33.33% - 20px);
+      background-color: #fff;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .product-info {
+      padding: 10px;
+    }
+
+    .product-name {
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .product-price {
+      color: #f00;
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>상품 목록</h1>
+  <div class="product-list" >
+    <div class="product-card" th:if="${#lists.size(prd)>0}" th:each="prd : ${prd}"> <!--th:url=""-->
+      <img th:src="${prd.prdImage_url}" th:alt="${prd.prdName}">
+      <div class="product-info">
+        <h3 class="product-name" th:text="${prd.prdName}">청바지</h3>
+        <p class="product-price" th:text="${prd.prdPrice}+'원'" >25,000원</p>
+      </div>
+    </div>
+
+    <!-- 추가 상품 카드 -->
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시판</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style type="text/css">
+        html{
+            width:100%;
+            height:100%;
+        }
+
+        main{
+            height:auto;
+            min-height:100%;
+            padding-bottom:177px;
+        }
+        footer{
+            height:177px;
+            position : relative;
+            transform : translateY(-100%);
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div id="header" th:include="layout/header :: header"></div>
+</header>
+
+<main>
+    <div class="container mt-5">
+       <ul th:each="Qna : ${Qna}">
+           <li class="shopList" >
+               <input type="hidden" name="goods_idx" value="">
+               <div class="box " >
+                   <p class="best_icon"></p>
+                   <div class="img">
+                       <div class="shopImg">
+                           <a href="/shop/view.php?index_no=153746">
+                               <img src="이미지주소" alt="상품이름" data-oriimg="상품이미지" class="gif-lib-track">
+                           </a>
+                       </div>
+                   </div>
+                   <div class="info">
+                       <div style="position:relative">
+                           <span style="font-size:18px; font-weight:500; color:#333; margin-left:7px;">
+                            <p th:text="${Qna.title}">
+                           </span>
+                       </div>
+                   </div>
+                   <p class="name">
+                       <a href="상품주소" th:text="${Qna.title}"></a>
+                   </p>
+                   <p style="height:1px; border-bottom:1px solid #dbdbdb; margin:7px 0 10px; width:calc(100% + 10px); transform:translateX(-5px);"></p>
+               </div>
+           </li>
+       </ul>
+    </div>
+</main>
+<footer>
+    <div id="footer" th:include="layout/footer :: footer"></div>
+</footer>
+</body>
+</html>
