@@ -19,7 +19,7 @@ public class SampleController {
 	//R
     @RequestMapping("/sample")
 	public ModelAndView sampleLi() throws Exception {
-		ModelAndView mv = new ModelAndView("/sample/list");
+		ModelAndView mv = new ModelAndView("/sample/Sample_list");
 		List<SampleDto> sample = sampleService.selectSampleList();
 		mv.addObject("sample", sample);
 		return mv;
@@ -28,7 +28,7 @@ public class SampleController {
 	//C
 	@RequestMapping(value = "/sample/write", method = RequestMethod.GET)
 	public String insertSample() throws Exception {
-		return "/sample/write";
+		return "/sample/Sample_write";
 	}
 
 	@RequestMapping(value = "/sample/write", method = RequestMethod.POST)
