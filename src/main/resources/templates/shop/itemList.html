@@ -64,12 +64,14 @@
 <div class="container">
   <h1>상품 목록</h1>
   <div class="product-list" >
-    <div class="product-card" th:if="${#lists.size(prd)>0}" th:each="prd : ${prd}"> <!--th:url=""-->
-      <img th:src="${prd.prdImage_url}" th:alt="${prd.prdName}">
-      <div class="product-info">
-        <h3 class="product-name" th:text="${prd.prdName}">청바지</h3>
-        <p class="product-price" th:text="${prd.prdPrice}+'원'" >25,000원</p>
-      </div>
+    <div class="product-card" th:if="${#lists.size(prd)>0}" th:each="prd : ${prd}"> <!---->
+      <a href="/jShop/item/" th:attrappend="href=${prd.prdIdx}" style="text-decoration:none"  ><!---->
+        <img th:src="${prd.prdImage_url}" th:alt="${prd.prdName}">
+        <div class="product-info">
+          <h3 class="product-name" th:text="${prd.prdName}">청바지</h3>
+          <p class="product-price" th:text="${prd.prdPrice}+'원'" >25,000원</p>
+        </div>
+        </a>
     </div>
 
     <!-- 추가 상품 카드 -->

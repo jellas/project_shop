@@ -10,6 +10,10 @@ public interface BoardMapper {
 
     /*상품*/
     List<ProductsDto> selectPrdList() throws Exception;
+
+    /*상품 하나 선택*/
+    ProductsDto selectPrdOne(int prdIdx) throws Exception;
+
     //void insertPrd(ProductsDto prd) throws Exception;
 
 

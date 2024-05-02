@@ -18,6 +18,12 @@ public class BoardServiceImpl implements BoardService {
         return boardMapper.selectPrdList();
     }
 
+    @Override
+    public ProductsDto selectPrdOne(int prdIdx) throws Exception {
+        ProductsDto prd = boardMapper.selectPrdOne(prdIdx);
+        return prd;
+    }
+
 //    @Override
 //    public void insertPrd(ProductsDto prd) throws Exception {
 //        boardMapper.insertPrd(prd);

@@ -14,5 +14,15 @@
         ]]>
 	</select>
 
+    <select id="selectPrdOne" resultType="com.shop.project.dto.ProductsDto">
+		<![CDATA[
+        SELECT
+            prdIdx, prdId, prdName, prdPrice, prdImage_url
+        FROM
+            products
+        WHERE prdIdx = #{prdIdx}
+        ]]>
+	</select>
+
 
 </mapper>

@@ -8,7 +8,7 @@
 <body>
 <div class="container">
   <div class="product">
-    <img th:src="${prd.prdImage_url}" alt="${prd.prdName}">
+    <img th:src="${prd.prdImage_url}" th:alt="${prd.prdName}">
     <h2 th:text="${prd.prdName}">상품이름</h2>
     <p th:text="'가격: '+${prd.prdPrice}">가격: 상품가격</p>
     <p>설명: 상품설명</p>
